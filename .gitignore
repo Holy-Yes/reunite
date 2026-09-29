@@ -1,0 +1,15 @@
+.venv/
+.cache/
+.env
+.env.local
+__pycache__/
+*.pyc
+.pytest_cache/
+data/media/
+data/seed/
+backend/weights/*.pt
+backend/weights/calibration.json
+node_modules/
+dist/
+.DS_Store
+.claude/scheduled_tasks.lock

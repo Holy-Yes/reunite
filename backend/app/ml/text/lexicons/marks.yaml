@@ -1,0 +1,7 @@
+# Distinguishing marks. The key is the normalized mark type, used for matching.
+marks:
+  dent:     [dent, dents, dented, dinged, ding]
+  scratch:  [scratch, scratches, scratched, scuff, scuffs, scuffed, scrape, scraped]
+  sticker:  [sticker, stickers, decal, decals]
+  cracked:  [crack, cracks, cracked, shattered, smashed, chipped, broken screen]
+  engraved: [engraved, engraving, etched, carved, embossed, initials]

@@ -1,0 +1,18 @@
+{
+  "name": "reunite-globe-hero",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5192 --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}

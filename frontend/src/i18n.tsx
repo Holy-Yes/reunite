@@ -1,0 +1,206 @@
+import { setLocale } from "./lib";
+import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+
+// UI strings only. Matching itself reads English descriptions; the app around it speaks the person's language.
+export type Lang = "en" | "hi" | "te";
+export const LANGS: { id: Lang; label: string }[] = [
+  { id: "en", label: "English" },
+  { id: "hi", label: "हिन्दी" },
+  { id: "te", label: "తెలుగు" },
+];
+
+const en = {
+  "nav.home": "Home", "nav.matches": "Matches", "nav.activity": "Activity", "nav.alerts": "Alerts", "nav.me": "Me", "nav.desk": "Desk", "nav.guard": "Guard",
+  "home.title": "What's missing can find its way back.",
+  "home.lost": "I lost something", "home.lostHint": "Describe it or take a photo of something like it",
+  "home.found": "I found something", "home.foundHint": "Snap it. We'll tell the owner it's safe",
+  "home.mine": "Your reports", "home.none": "Nothing reported yet.", "home.matchesWaiting": "possible matches are waiting for you",
+  "home.browse": "Found around campus",
+  "signin.title": "Sign in with your college email", "signin.email": "College email", "signin.send": "Send me a code",
+  "signin.code": "Six-digit code", "signin.verify": "Sign in", "signin.sent": "We sent a code to", "signin.change": "Use a different email",
+  "report.lostTitle": "Tell us what you lost", "report.foundTitle": "Tell us what you found",
+  "report.step": "Step", "report.of": "of",
+  "report.s1": "The thing", "report.s2": "Check the details", "report.s3": "Where and when",
+  "report.photo": "Take or choose a photo", "report.photoAdd": "Add a photo", "report.words": "Or describe it in your own words",
+  "report.wordsPh": "black leather wallet with a blue sticker", "report.next": "Continue", "report.back": "Back", "report.submit": "Submit report",
+  "report.reading": "Reading what you gave us…", "report.chipsHint": "We filled these in. Fix anything that's wrong.",
+  "report.category": "What is it", "report.brand": "Brand", "report.colors": "Colors", "report.marks": "Marks or stickers",
+  "report.addMark": "Add a mark", "report.serial": "Serial number or roll number", "report.private": "Keep private",
+  "report.privateHint": "Private details are never shown. Only the real owner is asked about them.",
+  "report.where": "Where", "report.choosePlace": "Choose a place", "report.when": "When", "report.whenLost": "About when did you lose it?", "report.whenFound": "When did you find it?",
+  "report.now": "Just now", "report.today": "Earlier today", "report.yesterday": "Yesterday", "report.pick": "Pick a time",
+  "report.custody": "Where is it now?", "report.withMe": "I have it with me", "report.done": "Report saved", "report.doneBody": "We're looking. You'll get an alert when something matches.",
+  "report.seeMatches": "See matches", "report.needSomething": "Add a photo or a few words first.",
+  "matches.title": "Possible matches", "matches.empty": "No matches yet. New found items are checked against your reports as they arrive.",
+  "matches.mine": "That's mine", "matches.notMine": "Not mine", "matches.why": "Why this match", "matches.photoNote": "Photo is blurred until you prove it's yours.",
+  "band.strong": "Strong match", "band.possible": "Possible match", "band.long_shot": "Long shot",
+  "claim.title": "Prove it's yours", "claim.intro": "Answer a few things only the owner would know. The finder never sees your answers as a stranger would.",
+  "claim.submit": "Send answers", "claim.pending": "The finder or the desk is checking your answers.", "claim.approved": "Approved. Go collect it.",
+  "claim.rejected": "This one didn't check out.", "claim.more": "One more question", "claim.pass": "Open handover pass", "claim.chat": "Message the finder", "claim.chatOwner": "Message the owner",
+  "claim.review": "Claims on things you found", "claim.finderTitle": "Someone says this is theirs", "claim.said": "They said", "claim.have": "You have", "role.finder": "Finder", "role.owner": "Owner", "claim.approve": "Approve", "claim.reject": "Reject", "claim.ask": "Ask for more",
+  "claim.theirAnswers": "Their answers", "claim.yours": "Your private details",
+  "pass.title": "Handover pass", "pass.show": "Show this at the desk or to the finder", "pass.code": "Or say this code", "pass.expired": "This pass expired.", "pass.renew": "Get a new pass",
+  "pass.collect": "Collect from",
+  "chat.title": "Messages", "chat.hint": "Phone numbers and emails are hidden here. Meet at the desk.", "chat.ph": "Write a message", "chat.send": "Send",
+  "chat.locked": "Chat opens once the claim is approved.",
+  "tip.title": "Say thanks", "tip.hint": "A pledge you settle in person. No money moves through this app.", "tip.amount": "Amount", "tip.send": "Pledge", "tip.done": "Thanks pledged",
+  "alerts.title": "Alerts", "alerts.empty": "You're all caught up.", "alerts.readAll": "Mark all read",
+  "me.title": "You", "me.roll": "Roll number", "me.save": "Save", "me.language": "Language", "me.signout": "Sign out", "me.trust": "Trust",
+  "me.emailAlerts": "Email me about matches",
+  "trust.new": "New here", "trust.ok": "Building trust", "trust.trusted": "Trusted", "trust.low": "Low trust",
+  "trust.returned": "returned", "trust.approved": "approved claims", "trust.points": "points",
+  "item.timeline": "What happened", "item.close": "Close this report", "item.status": "Status",
+  "status.processing": "Reading it", "status.open": "Open", "status.matched": "Has matches", "status.claimed": "Claim in progress", "status.returned": "Returned", "status.closed": "Closed",
+  "desk.title": "Desk", "desk.queue": "Claims to review", "desk.confirm": "Confirm a handover", "desk.code": "Six-digit code", "desk.idChecked": "I checked their college ID",
+  "desk.confirmBtn": "Confirm handover", "desk.bulk": "Log found items", "desk.bulkHint": "One item per line. Photos can be added later.", "desk.bulkPh": "black umbrella\nblue Milton bottle with a sticker",
+  "desk.bulkZone": "Found at", "desk.bulkBtn": "Log items", "desk.empty": "Nothing waiting.",
+  "guard.title": "Security guard", "guard.scanBtn": "Scan the QR code", "guard.scanHint": "Point the camera at the QR code on the owner's pass.",
+  "guard.scanUnsupported": "Camera isn't available here. Enter the code instead.", "guard.orCode": "Or enter the code",
+  "kind.lost": "Lost", "kind.found": "Found",
+  "tags.title": "My tags", "tags.intro": "Stick a QR tag on keys, luggage or a laptop bag. Whoever finds it scans the code and writes to you. No app, no phone number.",
+  "tags.name": "What is it on", "tags.namePh": "blue keychain", "tags.add": "Make a tag", "tags.print": "Print", "tags.off": "Turn off", "tags.on": "Turn on",
+  "tags.empty": "No tags yet.", "tags.replyPh": "Reply", "tags.messages": "messages", "tags.link": "Open my tags",
+  "pub.title": "You found something of someone's", "pub.intro": "Thank you. Leave a note and the owner will see it. Please don't put phone numbers here; they're hidden.",
+  "pub.ph": "Where you are, and where you can leave it", "pub.send": "Send to the owner", "pub.sent": "Sent. Keep this page open, the owner may reply.", "pub.gone": "This tag isn't active.", "pub.you": "You", "pub.owner": "Owner",
+  "common.loading": "Loading…", "common.retry": "Try again", "common.cancel": "Cancel", "common.save": "Save", "common.offline": "You're offline.",
+  "common.private": "Private", "common.routed": "Now with", "common.skip": "Skip to content",
+};
+export type Key = keyof typeof en;
+
+const hi: Partial<Record<Key, string>> = {
+  "nav.home": "होम", "nav.matches": "मैच", "nav.activity": "गतिविधि", "nav.alerts": "अलर्ट", "nav.me": "मैं", "nav.desk": "डेस्क", "nav.guard": "गार्ड",
+  "home.title": "जो खो गया है, वह वापस मिल सकता है।",
+  "home.lost": "मेरी कोई चीज़ खो गई", "home.lostHint": "बताइए या मिलती-जुलती चीज़ की फ़ोटो लीजिए",
+  "home.found": "मुझे कोई चीज़ मिली", "home.foundHint": "फ़ोटो लीजिए। हम मालिक को बता देंगे",
+  "home.mine": "आपकी रिपोर्ट", "home.none": "अभी कोई रिपोर्ट नहीं।", "home.matchesWaiting": "संभावित मैच आपका इंतज़ार कर रहे हैं",
+  "home.browse": "कैंपस में मिली चीज़ें",
+  "signin.title": "अपने कॉलेज ईमेल से साइन इन करें", "signin.email": "कॉलेज ईमेल", "signin.send": "कोड भेजें",
+  "signin.code": "छह अंकों का कोड", "signin.verify": "साइन इन", "signin.sent": "कोड भेजा गया:", "signin.change": "दूसरा ईमेल इस्तेमाल करें",
+  "report.lostTitle": "बताइए क्या खोया", "report.foundTitle": "बताइए क्या मिला",
+  "report.step": "चरण", "report.of": "/",
+  "report.s1": "चीज़", "report.s2": "जानकारी जाँचें", "report.s3": "कहाँ और कब",
+  "report.photo": "फ़ोटो लें या चुनें", "report.photoAdd": "फ़ोटो जोड़ें", "report.words": "या अपने शब्दों में बताइए",
+  "report.wordsPh": "काला चमड़े का बटुआ, नीला स्टिकर", "report.next": "आगे", "report.back": "पीछे", "report.submit": "रिपोर्ट भेजें",
+  "report.reading": "आपकी जानकारी पढ़ रहे हैं…", "report.chipsHint": "हमने ये भर दिए हैं। कुछ गलत हो तो ठीक करें।",
+  "report.category": "यह क्या है", "report.brand": "ब्रांड", "report.colors": "रंग", "report.marks": "निशान या स्टिकर",
+  "report.addMark": "निशान जोड़ें", "report.serial": "सीरियल या रोल नंबर", "report.private": "गोपनीय रखें",
+  "report.privateHint": "गोपनीय जानकारी कभी नहीं दिखती। सिर्फ़ असली मालिक से पूछी जाती है।",
+  "report.where": "कहाँ", "report.choosePlace": "जगह चुनें", "report.when": "कब", "report.whenLost": "लगभग कब खोया?", "report.whenFound": "कब मिला?",
+  "report.now": "अभी", "report.today": "आज पहले", "report.yesterday": "कल", "report.pick": "समय चुनें",
+  "report.custody": "अभी यह कहाँ है?", "report.withMe": "मेरे पास है", "report.done": "रिपोर्ट सहेजी गई", "report.doneBody": "हम खोज रहे हैं। कोई मैच मिलते ही अलर्ट आएगा।",
+  "report.seeMatches": "मैच देखें", "report.needSomething": "पहले फ़ोटो या कुछ शब्द जोड़ें।",
+  "matches.title": "संभावित मैच", "matches.empty": "अभी कोई मैच नहीं। नई मिली चीज़ें आपकी रिपोर्ट से मिलाई जाती हैं।",
+  "matches.mine": "यह मेरा है", "matches.notMine": "मेरा नहीं", "matches.why": "यह मैच क्यों", "matches.photoNote": "आपका होना साबित होने तक फ़ोटो धुंधली है।",
+  "band.strong": "पक्का मैच", "band.possible": "संभावित मैच", "band.long_shot": "कमज़ोर संभावना",
+  "claim.title": "साबित करें कि यह आपका है", "claim.intro": "कुछ ऐसी बातें बताइए जो सिर्फ़ मालिक जानता है।",
+  "claim.submit": "जवाब भेजें", "claim.pending": "जवाब जाँचे जा रहे हैं।", "claim.approved": "मंज़ूर। जाकर ले लीजिए।",
+  "claim.rejected": "यह दावा सही नहीं निकला।", "claim.more": "एक और सवाल", "claim.pass": "हैंडओवर पास खोलें", "claim.chat": "खोजने वाले को संदेश भेजें", "claim.chatOwner": "मालिक को संदेश भेजें",
+  "claim.review": "आपको मिली चीज़ों पर दावे", "claim.finderTitle": "कोई कह रहा है कि यह उसका है", "claim.said": "उन्होंने कहा", "claim.have": "आपके पास", "role.finder": "खोजने वाला", "role.owner": "मालिक", "claim.approve": "मंज़ूर करें", "claim.reject": "नामंज़ूर करें", "claim.ask": "और जानकारी माँगें",
+  "claim.theirAnswers": "उनके जवाब", "claim.yours": "आपकी गोपनीय जानकारी",
+  "pass.title": "हैंडओवर पास", "pass.show": "यह डेस्क पर या खोजने वाले को दिखाएँ", "pass.code": "या यह कोड बताएँ", "pass.expired": "यह पास समाप्त हो गया।", "pass.renew": "नया पास लें",
+  "pass.collect": "यहाँ से लें",
+  "chat.title": "संदेश", "chat.hint": "फ़ोन नंबर और ईमेल यहाँ छिपाए जाते हैं। डेस्क पर मिलें।", "chat.ph": "संदेश लिखें", "chat.send": "भेजें",
+  "chat.locked": "दावा मंज़ूर होने पर चैट खुलेगी।",
+  "tip.title": "धन्यवाद कहें", "tip.hint": "यह सिर्फ़ एक वादा है जो आप मिलकर निभाते हैं। ऐप से पैसा नहीं जाता।", "tip.amount": "राशि", "tip.send": "वादा करें", "tip.done": "वादा दर्ज हुआ",
+  "alerts.title": "अलर्ट", "alerts.empty": "सब देख लिया।", "alerts.readAll": "सब पढ़ा हुआ करें",
+  "me.title": "आप", "me.roll": "रोल नंबर", "me.save": "सहेजें", "me.language": "भाषा", "me.signout": "साइन आउट", "me.trust": "भरोसा",
+  "me.emailAlerts": "मैच पर ईमेल भेजें",
+  "trust.new": "नए सदस्य", "trust.ok": "भरोसा बन रहा है", "trust.trusted": "भरोसेमंद", "trust.low": "कम भरोसा",
+  "trust.returned": "लौटाए", "trust.approved": "मंज़ूर दावे", "trust.points": "अंक",
+  "item.timeline": "क्या-क्या हुआ", "item.close": "रिपोर्ट बंद करें", "item.status": "स्थिति",
+  "status.processing": "पढ़ी जा रही है", "status.open": "खुली", "status.matched": "मैच मिले", "status.claimed": "दावा जारी", "status.returned": "लौटा दी गई", "status.closed": "बंद",
+  "desk.title": "डेस्क", "desk.queue": "जाँचने वाले दावे", "desk.confirm": "हैंडओवर पक्का करें", "desk.code": "छह अंकों का कोड", "desk.idChecked": "मैंने उनका कॉलेज ID देखा",
+  "desk.confirmBtn": "हैंडओवर पक्का करें", "desk.bulk": "मिली चीज़ें दर्ज करें", "desk.bulkHint": "हर लाइन में एक चीज़। फ़ोटो बाद में जोड़ सकते हैं।", "desk.bulkZone": "यहाँ मिली", "desk.bulkBtn": "दर्ज करें", "desk.empty": "कुछ लंबित नहीं।",
+  "guard.title": "सुरक्षा गार्ड", "guard.scanBtn": "क्यूआर कोड स्कैन करें", "guard.scanHint": "मालिक के पास पर मौजूद क्यूआर कोड पर कैमरा दिखाएं।",
+  "guard.scanUnsupported": "यहाँ कैमरा उपलब्ध नहीं है। इसके बजाय कोड डालें।", "guard.orCode": "या कोड डालें",
+  "kind.lost": "खोया", "kind.found": "मिला",
+  "tags.title": "मेरे टैग", "tags.intro": "चाबी, सामान या लैपटॉप बैग पर QR टैग लगाइए। जिसे मिले, वह कोड स्कैन करके आपको लिख सकता है। न ऐप, न फ़ोन नंबर।",
+  "tags.name": "यह किस चीज़ पर है", "tags.namePh": "नीली चाबी का गुच्छा", "tags.add": "टैग बनाएँ", "tags.print": "प्रिंट", "tags.off": "बंद करें", "tags.on": "चालू करें",
+  "tags.empty": "अभी कोई टैग नहीं।", "tags.replyPh": "जवाब दें", "tags.messages": "संदेश", "tags.link": "मेरे टैग खोलें",
+  "pub.title": "आपको किसी की चीज़ मिली है", "pub.intro": "धन्यवाद। एक संदेश छोड़िए, मालिक देख लेगा। कृपया फ़ोन नंबर न लिखें; वे छिपा दिए जाते हैं।",
+  "pub.ph": "आप कहाँ हैं और इसे कहाँ छोड़ सकते हैं", "pub.send": "मालिक को भेजें", "pub.sent": "भेज दिया। यह पेज खुला रखें, मालिक जवाब दे सकते हैं।", "pub.gone": "यह टैग चालू नहीं है।", "pub.you": "आप", "pub.owner": "मालिक",
+  "common.loading": "लोड हो रहा है…", "common.retry": "फिर कोशिश करें", "common.cancel": "रद्द करें", "common.save": "सहेजें", "common.offline": "आप ऑफ़लाइन हैं।",
+  "common.private": "गोपनीय", "common.routed": "अब यहाँ है", "common.skip": "सामग्री पर जाएँ",
+};
+
+const te: Partial<Record<Key, string>> = {
+  "nav.home": "హోమ్", "nav.matches": "మ్యాచ్‌లు", "nav.activity": "కార్యకలాపం", "nav.alerts": "అలర్ట్‌లు", "nav.me": "నేను", "nav.desk": "డెస్క్", "nav.guard": "గార్డ్",
+  "home.title": "పోయినది తిరిగి దొరకవచ్చు.",
+  "home.lost": "నా వస్తువు పోయింది", "home.lostHint": "వివరించండి లేదా అలాంటి వస్తువు ఫోటో తీయండి",
+  "home.found": "నాకు ఒక వస్తువు దొరికింది", "home.foundHint": "ఫోటో తీయండి. యజమానికి మేము చెబుతాము",
+  "home.mine": "మీ రిపోర్టులు", "home.none": "ఇంకా రిపోర్టులు లేవు.", "home.matchesWaiting": "సాధ్యమైన మ్యాచ్‌లు మీ కోసం వేచి ఉన్నాయి",
+  "home.browse": "క్యాంపస్‌లో దొరికినవి",
+  "signin.title": "మీ కాలేజీ ఈమెయిల్‌తో సైన్ ఇన్ చేయండి", "signin.email": "కాలేజీ ఈమెయిల్", "signin.send": "కోడ్ పంపండి",
+  "signin.code": "ఆరు అంకెల కోడ్", "signin.verify": "సైన్ ఇన్", "signin.sent": "కోడ్ పంపాము:", "signin.change": "వేరే ఈమెయిల్ వాడండి",
+  "report.lostTitle": "ఏమి పోయిందో చెప్పండి", "report.foundTitle": "ఏమి దొరికిందో చెప్పండి",
+  "report.step": "దశ", "report.of": "/",
+  "report.s1": "వస్తువు", "report.s2": "వివరాలు చూడండి", "report.s3": "ఎక్కడ, ఎప్పుడు",
+  "report.photo": "ఫోటో తీయండి లేదా ఎంచుకోండి", "report.photoAdd": "ఫోటో జోడించండి", "report.words": "లేదా మీ మాటల్లో వివరించండి",
+  "report.wordsPh": "నలుపు తోలు పర్సు, నీలం స్టిక్కర్", "report.next": "కొనసాగండి", "report.back": "వెనక్కి", "report.submit": "రిపోర్ట్ పంపండి",
+  "report.reading": "మీ వివరాలు చదువుతున్నాం…", "report.chipsHint": "ఇవి మేము నింపాము. తప్పు ఉంటే సరిచేయండి.",
+  "report.category": "ఇది ఏమిటి", "report.brand": "బ్రాండ్", "report.colors": "రంగులు", "report.marks": "గుర్తులు లేదా స్టిక్కర్లు",
+  "report.addMark": "గుర్తు జోడించండి", "report.serial": "సీరియల్ లేదా రోల్ నంబర్", "report.private": "గోప్యంగా ఉంచండి",
+  "report.privateHint": "గోప్య వివరాలు ఎప్పుడూ కనిపించవు. అసలు యజమానిని మాత్రమే అడుగుతాం.",
+  "report.where": "ఎక్కడ", "report.choosePlace": "చోటు ఎంచుకోండి", "report.when": "ఎప్పుడు", "report.whenLost": "సుమారు ఎప్పుడు పోయింది?", "report.whenFound": "ఎప్పుడు దొరికింది?",
+  "report.now": "ఇప్పుడే", "report.today": "ఈ రోజు ముందు", "report.yesterday": "నిన్న", "report.pick": "సమయం ఎంచుకోండి",
+  "report.custody": "ఇప్పుడు ఇది ఎక్కడ ఉంది?", "report.withMe": "నా దగ్గర ఉంది", "report.done": "రిపోర్ట్ సేవ్ అయింది", "report.doneBody": "మేము వెతుకుతున్నాం. మ్యాచ్ దొరికితే అలర్ట్ వస్తుంది.",
+  "report.seeMatches": "మ్యాచ్‌లు చూడండి", "report.needSomething": "ముందు ఫోటో లేదా కొన్ని మాటలు జోడించండి.",
+  "matches.title": "సాధ్యమైన మ్యాచ్‌లు", "matches.empty": "ఇంకా మ్యాచ్‌లు లేవు. కొత్తగా దొరికినవి మీ రిపోర్టులతో పోలుస్తాం.",
+  "matches.mine": "ఇది నాదే", "matches.notMine": "నాది కాదు", "matches.why": "ఈ మ్యాచ్ ఎందుకు", "matches.photoNote": "ఇది మీదని నిరూపించే వరకు ఫోటో మసకగా ఉంటుంది.",
+  "band.strong": "బలమైన మ్యాచ్", "band.possible": "సాధ్యమైన మ్యాచ్", "band.long_shot": "తక్కువ అవకాశం",
+  "claim.title": "ఇది మీదని నిరూపించండి", "claim.intro": "అసలు యజమానికి మాత్రమే తెలిసిన కొన్ని విషయాలు చెప్పండి.",
+  "claim.submit": "సమాధానాలు పంపండి", "claim.pending": "మీ సమాధానాలను పరిశీలిస్తున్నారు.", "claim.approved": "ఆమోదించారు. వెళ్లి తీసుకోండి.",
+  "claim.rejected": "ఈ క్లెయిమ్ సరిపోలేదు.", "claim.more": "మరొక ప్రశ్న", "claim.pass": "హ్యాండోవర్ పాస్ తెరవండి", "claim.chat": "దొరికినవారికి సందేశం పంపండి", "claim.chatOwner": "యజమానికి సందేశం పంపండి",
+  "claim.review": "మీకు దొరికిన వస్తువులపై క్లెయిమ్‌లు", "claim.finderTitle": "ఇది తనదని ఎవరో అంటున్నారు", "claim.said": "వారు చెప్పింది", "claim.have": "మీ వద్ద ఉన్నది", "role.finder": "దొరికినవారు", "role.owner": "యజమాని", "claim.approve": "ఆమోదించండి", "claim.reject": "తిరస్కరించండి", "claim.ask": "మరింత అడగండి",
+  "claim.theirAnswers": "వారి సమాధానాలు", "claim.yours": "మీ గోప్య వివరాలు",
+  "pass.title": "హ్యాండోవర్ పాస్", "pass.show": "దీన్ని డెస్క్ వద్ద లేదా దొరికినవారికి చూపండి", "pass.code": "లేదా ఈ కోడ్ చెప్పండి", "pass.expired": "ఈ పాస్ గడువు ముగిసింది.", "pass.renew": "కొత్త పాస్ తీసుకోండి",
+  "pass.collect": "ఇక్కడ తీసుకోండి",
+  "chat.title": "సందేశాలు", "chat.hint": "ఫోన్ నంబర్లు, ఈమెయిళ్లు ఇక్కడ దాచబడతాయి. డెస్క్ వద్ద కలవండి.", "chat.ph": "సందేశం రాయండి", "chat.send": "పంపండి",
+  "chat.locked": "క్లెయిమ్ ఆమోదం పొందాక చాట్ తెరుచుకుంటుంది.",
+  "tip.title": "ధన్యవాదాలు చెప్పండి", "tip.hint": "ఇది మీరు నేరుగా ఇచ్చే హామీ మాత్రమే. ఈ యాప్ ద్వారా డబ్బు వెళ్లదు.", "tip.amount": "మొత్తం", "tip.send": "హామీ ఇవ్వండి", "tip.done": "హామీ నమోదైంది",
+  "alerts.title": "అలర్ట్‌లు", "alerts.empty": "అన్నీ చూశారు.", "alerts.readAll": "అన్నీ చదివినవిగా గుర్తించండి",
+  "me.title": "మీరు", "me.roll": "రోల్ నంబర్", "me.save": "సేవ్", "me.language": "భాష", "me.signout": "సైన్ అవుట్", "me.trust": "నమ్మకం",
+  "me.emailAlerts": "మ్యాచ్‌ల గురించి ఈమెయిల్ పంపండి",
+  "trust.new": "కొత్తవారు", "trust.ok": "నమ్మకం పెరుగుతోంది", "trust.trusted": "నమ్మదగినవారు", "trust.low": "తక్కువ నమ్మకం",
+  "trust.returned": "తిరిగి ఇచ్చారు", "trust.approved": "ఆమోదిత క్లెయిమ్‌లు", "trust.points": "పాయింట్లు",
+  "item.timeline": "ఏం జరిగింది", "item.close": "రిపోర్ట్ మూసివేయండి", "item.status": "స్థితి",
+  "status.processing": "చదువుతున్నాం", "status.open": "తెరిచి ఉంది", "status.matched": "మ్యాచ్‌లు ఉన్నాయి", "status.claimed": "క్లెయిమ్ జరుగుతోంది", "status.returned": "తిరిగి ఇచ్చారు", "status.closed": "మూసివేశారు",
+  "desk.title": "డెస్క్", "desk.queue": "పరిశీలించాల్సిన క్లెయిమ్‌లు", "desk.confirm": "హ్యాండోవర్ నిర్ధారించండి", "desk.code": "ఆరు అంకెల కోడ్", "desk.idChecked": "వారి కాలేజీ ID చూశాను",
+  "desk.confirmBtn": "హ్యాండోవర్ నిర్ధారించండి", "desk.bulk": "దొరికిన వస్తువులు నమోదు చేయండి", "desk.bulkHint": "ప్రతి లైన్‌కు ఒక వస్తువు. ఫోటోలు తర్వాత జోడించవచ్చు.", "desk.bulkZone": "ఇక్కడ దొరికింది", "desk.bulkBtn": "నమోదు చేయండి", "desk.empty": "ఏమీ పెండింగ్‌లో లేదు.",
+  "guard.title": "సెక్యూరిటీ గార్డ్", "guard.scanBtn": "క్యూఆర్ కోడ్ స్కాన్ చేయండి", "guard.scanHint": "యజమాని పాస్‌పై ఉన్న క్యూఆర్ కోడ్‌పై కెమెరాను చూపండి.",
+  "guard.scanUnsupported": "ఇక్కడ కెమెరా అందుబాటులో లేదు. బదులుగా కోడ్ నమోదు చేయండి.", "guard.orCode": "లేదా కోడ్ నమోదు చేయండి",
+  "kind.lost": "పోయింది", "kind.found": "దొరికింది",
+  "tags.title": "నా ట్యాగ్‌లు", "tags.intro": "తాళాలు, సామాను లేదా ల్యాప్‌టాప్ బ్యాగ్‌పై QR ట్యాగ్ అంటించండి. దొరికినవారు కోడ్ స్కాన్ చేసి మీకు రాస్తారు. యాప్ అక్కర్లేదు, ఫోన్ నంబర్ అక్కర్లేదు.",
+  "tags.name": "ఇది దేని మీద ఉంది", "tags.namePh": "నీలం తాళాల గుత్తి", "tags.add": "ట్యాగ్ తయారు చేయండి", "tags.print": "ప్రింట్", "tags.off": "ఆఫ్ చేయండి", "tags.on": "ఆన్ చేయండి",
+  "tags.empty": "ఇంకా ట్యాగ్‌లు లేవు.", "tags.replyPh": "సమాధానం", "tags.messages": "సందేశాలు", "tags.link": "నా ట్యాగ్‌లు తెరవండి",
+  "pub.title": "మీకు ఎవరిదో ఒక వస్తువు దొరికింది", "pub.intro": "ధన్యవాదాలు. ఒక సందేశం రాయండి, యజమాని చూస్తారు. దయచేసి ఫోన్ నంబర్లు రాయకండి; అవి దాచబడతాయి.",
+  "pub.ph": "మీరు ఎక్కడ ఉన్నారు, దీన్ని ఎక్కడ వదిలిపెట్టగలరు", "pub.send": "యజమానికి పంపండి", "pub.sent": "పంపాం. ఈ పేజీని తెరిచే ఉంచండి, యజమాని సమాధానం ఇవ్వవచ్చు.", "pub.gone": "ఈ ట్యాగ్ ఆన్‌లో లేదు.", "pub.you": "మీరు", "pub.owner": "యజమాని",
+  "common.loading": "లోడ్ అవుతోంది…", "common.retry": "మళ్లీ ప్రయత్నించండి", "common.cancel": "రద్దు", "common.save": "సేవ్", "common.offline": "మీరు ఆఫ్‌లైన్‌లో ఉన్నారు.",
+  "common.private": "గోప్యం", "common.routed": "ఇప్పుడు ఇక్కడ", "common.skip": "కంటెంట్‌కు వెళ్లండి",
+};
+
+const dict: Record<Lang, Partial<Record<Key, string>>> = { en, hi, te };
+const KEY = "reunite.lang";
+
+type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: Key) => string };
+const I18n = createContext<Ctx>({ lang: "en", setLang: () => {}, t: (k) => en[k] });
+
+function initial(): Lang {
+  try {
+    const s = localStorage.getItem(KEY) as Lang | null;
+    if (s && s in dict) return s;
+  } catch { /* ignore */ }
+  const nav = (navigator.language || "en").slice(0, 2);
+  return nav === "hi" || nav === "te" ? nav : "en";
+}
+
+export function I18nProvider({ children }: { children: ReactNode }) {
+  const [lang, set] = useState<Lang>(() => { const l = initial(); setLocale(l); return l; });
+  const value = useMemo<Ctx>(() => ({
+    lang,
+    setLang: (l) => { setLocale(l); set(l); try { localStorage.setItem(KEY, l); } catch { /* ignore */ } document.documentElement.lang = l; },
+    t: (k) => dict[lang][k] ?? en[k],
+  }), [lang]);
+  return <I18n.Provider value={value}>{children}</I18n.Provider>;
+}
+export const useT = () => useContext(I18n);

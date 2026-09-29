@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reunite: campus lost and found</title>
+  <meta name="description" content="Describe what you lost or found. Reunite lines up the details, shows why it matches, and hands it back safely." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%230B0B0B' stroke-width='2'/%3E%3Cellipse cx='16' cy='16' rx='14' ry='5' transform='rotate(-30 16 16)' fill='none' stroke='%23FF6A13' stroke-width='2'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt"/></symbol>
+    <symbol id="i-orbit" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><ellipse cx="16" cy="16" rx="14" ry="5" transform="rotate(-30 16 16)" fill="none" stroke="var(--orange)" stroke-width="1.6"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="reunite, home">
+      <svg class="brand__mark" width="30" height="30"><use href="#i-orbit" /></svg>
+      <span>reunite</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#locations">Locations</a>
+      <a href="#how">How it works</a>
+      <a href="#desk">For the desk</a>
+    </nav>
+    <a class="nav__cta" href="#report">Report an item <svg width="16" height="16"><use href="#i-up-right" /></svg></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="headline">
+      <div class="globe-wrap" id="globe-wrap">
+        <div class="globe" id="globe" role="img" aria-label="Interactive globe showing lost and found reports. Drag to rotate, scroll to zoom."></div>
+        <svg class="globe-fallback" viewBox="0 0 400 400" aria-hidden="true">
+          <circle cx="200" cy="200" r="198" fill="#F5F3F0" stroke="#0B0B0B" stroke-opacity=".18" />
+          <ellipse cx="200" cy="200" rx="80" ry="198" fill="none" stroke="#0B0B0B" stroke-opacity=".15" />
+          <ellipse cx="200" cy="200" rx="150" ry="198" fill="none" stroke="#0B0B0B" stroke-opacity=".15" />
+          <path d="M2 200h396M20 130h360M20 270h360" stroke="#0B0B0B" stroke-opacity=".15" fill="none" />
+          <circle cx="262" cy="150" r="7" fill="#FF6A13" /><circle cx="140" cy="250" r="5" fill="#0B0B0B" />
+        </svg>
+      </div>
+
+      <div class="globe-ui">
+        <div class="globe-ui__name">
+          <span class="eyebrow eyebrow--quiet">Now viewing</span>
+          <h2 id="sector-name">North Hall</h2>
+          <p id="sector-meta">Campus sector · Live</p>
+        </div>
+        <p class="globe-ui__coords mono" id="sector-coords" aria-label="Coordinates">18.5204° N · 73.8567° E</p>
+        <div class="globe-ui__foot">
+          <p class="pulse"><span class="pulse__dot" aria-hidden="true"></span>Live campus pulse</p>
+          <button class="linkbtn" id="overview" type="button" hidden>Whole Earth</button>
+          <p class="mono" id="counter" aria-live="polite">01 / 03</p>
+        </div>
+        <div class="tip" id="tip" role="status" hidden></div>
+      </div>
+
+      <div class="hero__copy">
+        <p class="eyebrow"><svg width="12" height="12"><use href="#i-star" /></svg> A shorter way home</p>
+        <h1 id="headline">What's missing can find its <em>way back.</em></h1>
+        <p class="lede">A calmer path from the moment you lose something to the moment it is safely handed back.</p>
+        <div class="actions">
+          <a class="btn btn--lost" id="report" href="#report">Start a report <svg width="18" height="18"><use href="#i-up-right" /></svg></a>
+          <a class="textlink" href="#how">See how it works <svg width="16" height="16"><use href="#i-down" /></svg></a>
+        </div>
+      </div>
+
+      <p class="edge">Campus lost + found <span aria-hidden="true">&nbsp;/&nbsp;</span> Est. 2026</p>
+    </section>
+
+    <section class="strip" id="locations" aria-label="Campus locations">
+      <p class="strip__lede">places change.<br /><em>help moves with them.</em></p>
+      <ul class="strip__list" role="list">
+        <li><button class="loc" type="button" data-index="0" aria-pressed="true"><span class="mono loc__n">01</span><span class="loc__body"><strong>North Hall</strong><span>blue headphones · 12 open</span></span><svg width="18" height="18"><use href="#i-up-right" /></svg></button></li>
+        <li><button class="loc" type="button" data-index="1" aria-pressed="false"><span class="mono loc__n">02</span><span class="loc__body"><strong>The Commons</strong><span>silver water bottle · 08 open</span></span><svg width="18" height="18"><use href="#i-up-right" /></svg></button></li>
+        <li><button class="loc" type="button" data-index="2" aria-pressed="false"><span class="mono loc__n">03</span><span class="loc__body"><strong>Science Quad</strong><span>green canvas tote · 15 open</span></span><svg width="18" height="18"><use href="#i-up-right" /></svg></button></li>
+      </ul>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-h">
+      <div class="how__head">
+        <p class="eyebrow"><svg width="12" height="12"><use href="#i-star" /></svg> The handoff, made clear</p>
+        <h2 id="how-h">Three small steps.<br /><em>One less thing to carry.</em></h2>
+      </div>
+      <ol class="how__steps" role="list">
+        <li><span class="mono">01</span><h3>Tell us what happened.</h3><p>Describe it in a few words or add a photo. Keep moving; your draft stays on this phone.</p></li>
+        <li><span class="mono">02</span><h3>See why it matches.</h3><p>We line up the useful details and show you the best candidate in plain language.</p></li>
+        <li><span class="mono">03</span><h3>Hand it back safely.</h3><p>A verified claim and a simple QR handover keep the final exchange clear.</p></li>
+      </ol>
+    </section>
+
+    <section class="desk" id="desk" aria-labelledby="desk-h">
+      <div>
+        <p class="eyebrow"><svg width="12" height="12"><use href="#i-star" /></svg> For the people at the desk</p>
+        <h2 id="desk-h">More context<br /><em>when it matters.</em></h2>
+      </div>
+      <p class="desk__copy">A calmer claims queue, clearer handovers, and a campus-wide picture of what is moving.</p>
+      <a class="btn btn--ghost" href="#desk">Explore the desk view <svg width="18" height="18"><use href="#i-up-right" /></svg></a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="brand" href="#top" aria-label="reunite, top"><svg class="brand__mark" width="26" height="26"><use href="#i-orbit" /></svg><span>reunite</span></a>
+    <p>Items only · Privacy first · Made for campus</p>
+    <p class="foot__right">Globe: three.js, Natural Earth · © 2026</p>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

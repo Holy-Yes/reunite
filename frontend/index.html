@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#04060d" media="(prefers-color-scheme: dark)" />
+  <script>
+    // Set the theme before first paint so dark mode never flashes white.
+    try {
+      var t = localStorage.getItem("reunite.theme");
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+      document.documentElement.style.colorScheme = t;
+    } catch (e) {}
+  </script>
+  <title>Reunite: campus lost and found</title>
+  <meta name="description" content="Describe what you lost or found. Reunite lines up the details, shows why it matches, and hands it back safely." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Ccircle cx='32' cy='32' r='20' stroke='%230B0B0B' stroke-width='4'/%3E%3Cg transform='translate(32 32) rotate(-28)' stroke='%23FF6A13' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M-30 0A30 12 0 0 1 30 0'/%3E%3Cpath d='M-30 0A30 12 0 0 0 30 0'/%3E%3Ccircle cx='17' cy='9.9' r='5' fill='%23FF6A13' stroke='none'/%3E%3C/g%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

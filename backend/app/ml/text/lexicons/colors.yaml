@@ -1,0 +1,19 @@
+# The 17 named colors (hex used for CIELAB matching and for the UI swatches) plus text synonyms.
+colors:
+  black:  {hex: "#1B1D20", synonyms: [black, jet black, charcoal, onyx]}
+  white:  {hex: "#F4F4F2", synonyms: [white, off-white, off white, ivory]}
+  grey:   {hex: "#8B9096", synonyms: [grey, gray, dark grey, dark gray, light grey, light gray, ash, slate]}
+  silver: {hex: "#C3C8CD", synonyms: [silver, chrome]}
+  red:    {hex: "#C8322B", synonyms: [red, crimson, scarlet]}
+  orange: {hex: "#E8721E", synonyms: [orange, tangerine]}
+  yellow: {hex: "#E9C21F", synonyms: [yellow, mustard, lemon]}
+  green:  {hex: "#3E8E52", synonyms: [green, olive, lime, mint, dark green, light green]}
+  blue:   {hex: "#2F5FB8", synonyms: [blue, light blue, sky blue, royal blue, cyan, dark cyan]}
+  navy:   {hex: "#1F2F55", synonyms: [navy, navy blue, dark blue, midnight blue]}
+  purple: {hex: "#6D4A9B", synonyms: [purple, violet, lavender, lilac]}
+  pink:   {hex: "#E28AA9", synonyms: [pink, rose, magenta, fuchsia]}
+  brown:  {hex: "#7A5238", synonyms: [brown, tan, coffee, chocolate]}
+  beige:  {hex: "#CDB697", synonyms: [beige, cream, sand, nude, khaki]}
+  gold:   {hex: "#C9A24B", synonyms: [gold, golden, rose gold]}
+  maroon: {hex: "#6E1F2E", synonyms: [maroon, burgundy, wine, dark red]}
+  teal:   {hex: "#1F8A8A", synonyms: [teal, aqua, turquoise]}

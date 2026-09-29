@@ -1,0 +1,16 @@
+# Never let the dev .env (real-looking dev secrets) into any image layer.
+.env
+.env.production
+
+.venv
+node_modules
+frontend/dist
+frontend/node_modules
+.cache
+backend/weights
+data/media
+.git
+eval/reports
+training
+*.pyc
+__pycache__

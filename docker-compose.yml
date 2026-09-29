@@ -1,0 +1,49 @@
+# Production stack: Postgres, the API, and the built frontend behind nginx.
+#
+#   cp .env.production.example .env.production   # fill in real values -- see that file's comments
+#   docker compose build
+#   docker compose up -d
+#
+# No ${VAR} interpolation is used in this file on purpose: Docker Compose auto-loads a file literally
+# named ".env" in this directory for that, and this repo already has a dev ".env" with its own
+# secrets (see README's Deploy section). Every value each service needs comes through env_file below
+# instead, which is unrelated to that auto-load and always reads exactly the file named here.
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    env_file: .env.production
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-reunite}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file: .env.production
+    volumes:
+      - media:/app/data/media
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  pgdata: {}
+  media: {}

@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "reunite-globe",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Volumes/Dawnstrike/reunite/prototype/globe-hero && exec npx vite --port 5192 --strictPort --host 127.0.0.1"
+      ],
+      "port": 5192
+    },
+    {
+      "name": "reunite-backend",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Volumes/Dawnstrike/reunite/backend && JWT_SECRET=dev-secret-change-me-0123456789abcdef-long DESK_EMAILS=desk@vnrvjiet.ac.in ADMIN_EMAILS=admin@vnrvjiet.ac.in CORS_ORIGINS=http://localhost:5190,http://127.0.0.1:5190 exec ../.venv/bin/python -m uvicorn app.main:app --port 8010 --host 127.0.0.1"
+      ],
+      "port": 8010
+    },
+    {
+      "name": "reunite-frontend",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Volumes/Dawnstrike/reunite/frontend && exec npx vite --port 5191 --strictPort --host 127.0.0.1"
+      ],
+      "port": 5191
+    }
+  ]
+}

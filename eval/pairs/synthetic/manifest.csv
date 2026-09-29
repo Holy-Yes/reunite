@@ -1,0 +1,225 @@
+pair_id,side,image,text,zone,timestamp,category,set
+P000,lost,imgs/P000_lost.jpg,left my black backpack,z_gate,2026-09-06T14:30:00+00:00/2026-09-06T18:33:15.965522+00:00,backpack,synthetic
+P000,found,,found black ruckscak near admin block,z_admin,2026-09-08T11:20:49.615639+00:00,backpack,synthetic
+P001,lost,,"i lost a black American Tourister backpack, a scratch",z_hostel3,2026-09-05T16:30:00+00:00/2026-09-05T21:01:58.105378+00:00,backpack,synthetic
+P001,found,,found a black satchel,z_block_a,2026-09-06T17:14:49.446202+00:00,backpack,synthetic
+P002,lost,,"lost my green backpack, mountain sticker",z_sports,2026-09-05T15:45:00+00:00/2026-09-05T20:03:04.416815+00:00,backpack,synthetic
+P002,found,imgs/P002_found.jpg,,z_sports,2026-09-07T01:54:34.946443+00:00,backpack,synthetic
+P003,lost,,beige backpack,z_hostel3,2026-09-14T17:00:00+00:00/2026-09-14T18:08:00.542304+00:00,backpack,synthetic
+P003,found,imgs/P003_found.jpg,thnig near hostel 3,z_hostel3,2026-09-15T05:19:14.332722+00:00,backpack,synthetic
+P004,lost,imgs/P004_lost.jpg,"left my grey American Tourister backpack, red star sticker",z_canteen,2026-09-09T15:00:00+00:00/2026-09-09T18:58:56.728607+00:00,backpack,synthetic
+P004,found,,grey American Tourister bagpack,z_canteen,2026-09-10T00:56:20.804247+00:00,backpack,synthetic
+P005,lost,imgs/P005_lost.jpg,"black backpack, a scratch",z_canteen,2026-09-08T19:00:00+00:00/2026-09-08T21:40:46.497981+00:00,backpack,synthetic
+P005,found,,"black backpack, a scratch",z_hostel3,2026-09-08T19:45:09.538877+00:00,backpack,synthetic
+P006,lost,imgs/P006_lost.jpg,i lost a blue Adidas backpack,z_block_a,2026-09-03T15:00:00+00:00/2026-09-03T17:17:46.084622+00:00,backpack,synthetic
+P006,found,imgs/P006_found.jpg,,z_admin,2026-09-03T16:12:40.964138+00:00,backpack,synthetic
+P007,lost,,can't find my white satchel,z_library,2026-09-11T14:30:00+00:00/2026-09-11T15:31:01.070575+00:00,backpack,synthetic
+P007,found,imgs/P007_found.jpg,,z_library,2026-09-11T15:16:03.207004+00:00,backpack,synthetic
+P008,lost,imgs/P008_lost.jpg,Nike backpack,z_sports,2026-09-05T10:30:00+00:00/2026-09-05T12:04:31.968225+00:00,backpack,synthetic
+P008,found,imgs/P008_found.jpg,picked up a Nike backpack,z_sports,2026-09-05T11:50:28.204805+00:00,backpack,synthetic
+P009,lost,imgs/P009_lost.jpg,missing: brwon American Tourister backpack,z_canteen,2026-09-02T13:00:00+00:00/2026-09-02T14:12:21.653091+00:00,backpack,synthetic
+P009,found,imgs/P009_found.jpg,someone left a brown American Tourister thing near court,z_sports,2026-09-02T14:11:03.130258+00:00,backpack,synthetic
+P010,lost,,can't find my beige novel,z_gate,2026-09-05T13:15:00+00:00/2026-09-05T18:50:54.399200+00:00,book,synthetic
+P010,found,imgs/P010_found.jpg,someone left a book near gate,z_gate,2026-09-06T00:29:58.065503+00:00,book,synthetic
+P011,lost,imgs/P011_lost.jpg,"i lost a grey book, football sticker",z_library,2026-09-14T19:00:00+00:00/2026-09-15T00:30:54.192736+00:00,book,synthetic
+P011,found,imgs/P011_found.jpg,"picked up a grey book, football sticker",z_library,2026-09-15T14:04:24.071335+00:00,book,synthetic
+P012,lost,imgs/P012_lost.jpg,lost my book,z_block_a,2026-09-09T17:15:00+00:00/2026-09-09T18:17:54.683870+00:00,book,synthetic
+P012,found,imgs/P012_found.jpg,,z_block_b,2026-09-10T10:47:33.926205+00:00,book,synthetic
+P013,lost,,lost my brown book,z_block_a,2026-09-04T10:00:00+00:00/2026-09-04T12:30:08.069240+00:00,book,synthetic
+P013,found,,found a brown book,z_canteen,2026-09-04T19:38:43.949511+00:00,book,synthetic
+P014,lost,imgs/P014_lost.jpg,"can't find my thing, black cat sticker",z_hostel3,2026-09-08T14:15:00+00:00/2026-09-08T19:30:23.698935+00:00,book,synthetic
+P014,found,imgs/P014_found.jpg,picked up a beige textbook near common room,z_hostel3,2026-09-09T08:20:46.826062+00:00,book,synthetic
+P015,lost,imgs/P015_lost.jpg,"lost my silver book, rainbow sticker",z_gate,2026-09-07T08:45:00+00:00/2026-09-07T11:41:00.294100+00:00,book,synthetic
+P015,found,imgs/P015_found.jpg,,z_block_b,2026-09-07T10:07:52.728536+00:00,book,synthetic
+P016,lost,,"yellow book, rainbow sticker",z_library,2026-09-05T10:45:00+00:00/2026-09-05T15:44:48.141806+00:00,book,synthetic
+P016,found,,yellow book,z_canteen,2026-09-06T16:27:56.309063+00:00,book,synthetic
+P017,lost,imgs/P017_lost.jpg,"lost my teal Cello thing, a dent",z_block_a,2026-09-07T17:45:00+00:00/2026-09-07T23:21:51.850496+00:00,bottle,synthetic
+P017,found,imgs/P017_found.jpg,found a teal Cello bottles,z_canteen,2026-09-08T05:48:40.622614+00:00,bottle,synthetic
+P018,lost,imgs/P018_lost.jpg,"lost my white bottle, a dent",z_gate,2026-09-12T08:15:00+00:00/2026-09-12T13:32:45.160955+00:00,bottle,synthetic
+P018,found,,"found white Milton bottle, a dent near security desk",z_gate,2026-09-12T08:50:42.753188+00:00,bottle,synthetic
+P019,lost,,"teal Milton bottle, anime sticker",z_hostel3,2026-09-02T19:00:00+00:00/2026-09-02T20:39:36.364958+00:00,bottle,synthetic
+P019,found,imgs/P019_found.jpg,someone left a Milton btotle near sports complex,z_sports,2026-09-03T03:07:47.135770+00:00,bottle,synthetic
+P020,lost,,"left my Cello bottle, a scratch",z_library,2026-09-03T11:45:00+00:00/2026-09-03T14:27:06.982248+00:00,bottle,synthetic
+P020,found,imgs/P020_found.jpg,,z_library,2026-09-03T19:43:15.014091+00:00,bottle,synthetic
+P021,lost,,"lost my silver flask, rainbow sticker",z_library,2026-09-09T14:30:00+00:00/2026-09-09T18:39:37.180828+00:00,bottle,synthetic
+P021,found,imgs/P021_found.jpg,found silver flask near classroom,z_block_a,2026-09-09T15:37:25.013107+00:00,bottle,synthetic
+P022,lost,imgs/P022_lost.jpg,"silver Milton tumbler, black cat sticker",z_block_a,2026-09-11T16:45:00+00:00/2026-09-11T21:27:25.687121+00:00,bottle,synthetic
+P022,found,imgs/P022_found.jpg,"silver Milton thing, black cat sticker near lecture halls",z_block_a,2026-09-12T01:22:34.018547+00:00,bottle,synthetic
+P023,lost,,"bottle, football sticker",z_library,2026-09-11T09:45:00+00:00/2026-09-11T10:46:55.622167+00:00,bottle,synthetic
+P023,found,,"found black bottle, football sticker",z_block_a,2026-09-11T10:23:26.943616+00:00,bottle,synthetic
+P024,lost,imgs/P024_lost.jpg,,z_block_a,2026-09-07T15:45:00+00:00/2026-09-07T20:23:56.096552+00:00,bottle,synthetic
+P024,found,imgs/P024_found.jpg,"someone left a bottle, a dent",z_library,2026-09-08T03:20:28.134962+00:00,bottle,synthetic
+P025,lost,imgs/P025_lost.jpg,"can't find my brown bottle, football sticker",z_block_b,2026-09-04T13:30:00+00:00/2026-09-04T14:42:40.232052+00:00,bottle,synthetic
+P025,found,imgs/P025_found.jpg,"found Cello bottle, football sticker",z_library,2026-09-04T13:55:25.218910+00:00,bottle,synthetic
+P026,lost,,"i lost a bottle, a scratch",z_canteen,2026-09-05T15:30:00+00:00/2026-09-05T20:51:35.562652+00:00,bottle,synthetic
+P026,found,imgs/P026_found.jpg,"picked up a brown bottle, a scratch",z_library,2026-09-05T17:08:20.866806+00:00,bottle,synthetic
+P027,lost,,"beige Casio calculator, a scratch",z_sports,2026-09-06T13:45:00+00:00/2026-09-06T15:17:11.136787+00:00,calculator,synthetic
+P027,found,imgs/P027_found.jpg,,z_sports,2026-09-07T02:35:17.709417+00:00,calculator,synthetic
+P028,lost,,i lost a calculator,z_block_a,2026-09-07T18:30:00+00:00/2026-09-07T20:05:28.397625+00:00,calculator,synthetic
+P028,found,imgs/P028_found.jpg,,z_canteen,2026-09-08T01:25:34.128304+00:00,calculator,synthetic
+P029,lost,imgs/P029_lost.jpg,missing: grey Casio calculator,z_sports,2026-09-06T17:00:00+00:00/2026-09-06T22:03:35.922349+00:00,calculator,synthetic
+P029,found,,"Casio calculator, anime sticker near common room",z_hostel3,2026-09-07T00:05:04.040026+00:00,calculator,synthetic
+P030,lost,,"missing: black Casio thing, red star sticker and a scratch",z_gate,2026-09-09T13:00:00+00:00/2026-09-09T15:17:44.849389+00:00,calculator,synthetic
+P030,found,imgs/P030_found.jpg,"found balck Casio calculator, red star sticker and a scratch near a block",z_block_a,2026-09-10T05:52:51.616019+00:00,calculator,synthetic
+P031,lost,,"lost my calculator, crescent moon sticker",z_canteen,2026-09-04T15:45:00+00:00/2026-09-04T17:27:36.989330+00:00,calculator,synthetic
+P031,found,imgs/P031_found.jpg,white calculator,z_hostel3,2026-09-05T06:01:35.370066+00:00,calculator,synthetic
+P032,lost,imgs/P032_lost.jpg,"brown Casio calculator, a scratch",z_canteen,2026-09-13T10:15:00+00:00/2026-09-13T14:50:20.270439+00:00,calculator,synthetic
+P032,found,imgs/P032_found.jpg,,z_canteen,2026-09-14T14:50:20.310471+00:00,calculator,synthetic
+P033,lost,imgs/P033_lost.jpg,"borwn Casio calculator, red star sticker",z_gate,2026-09-05T15:45:00+00:00/2026-09-05T16:49:26.110581+00:00,calculator,synthetic
+P033,found,imgs/P033_found.jpg,someone left a Casio calculator near main gate,z_gate,2026-09-05T20:54:13.991710+00:00,calculator,synthetic
+P034,lost,imgs/P034_lost.jpg,"white Casio calculator, a scratch",z_library,2026-09-06T19:00:00+00:00/2026-09-06T22:55:28.788572+00:00,calculator,synthetic
+P034,found,imgs/P034_found.jpg,"picked up a white calculator, a scratch near playground",z_sports,2026-09-06T19:36:46.447264+00:00,calculator,synthetic
+P035,lost,imgs/P035_lost.jpg,"left my black Bose headphones, a scratch",z_block_b,2026-09-13T16:45:00+00:00/2026-09-13T21:31:25.571511+00:00,headphones,synthetic
+P035,found,,black thing,z_admin,2026-09-14T01:32:55.748164+00:00,headphones,synthetic
+P036,lost,,"lost my white headphones, a scratch",z_gate,2026-09-01T19:15:00+00:00/2026-09-01T23:06:28.058043+00:00,headphones,synthetic
+P036,found,imgs/P036_found.jpg,someone left a thing,z_block_a,2026-09-01T19:57:51.257498+00:00,headphones,synthetic
+P037,lost,,i lost a black boAt headphones,z_library,2026-09-13T14:45:00+00:00/2026-09-13T17:55:41.014906+00:00,headphones,synthetic
+P037,found,,picked up a black boAt headphones near the library,z_library,2026-09-14T07:20:39.864080+00:00,headphones,synthetic
+P038,lost,imgs/P038_lost.jpg,i lost a Bose headphones,z_admin,2026-09-07T18:15:00+00:00/2026-09-07T22:13:41.936767+00:00,headphones,synthetic
+P038,found,imgs/P038_found.jpg,someone left a black Bose headphones near entrance,z_gate,2026-09-08T02:36:48.267756+00:00,headphones,synthetic
+P039,lost,imgs/P039_lost.jpg,lost my grey boAt headset,z_admin,2026-09-08T16:15:00+00:00/2026-09-08T17:26:34.820563+00:00,headphones,synthetic
+P039,found,imgs/P039_found.jpg,grey headhpones near registrar,z_admin,2026-09-09T05:45:16.513925+00:00,headphones,synthetic
+P040,lost,imgs/P040_lost.jpg,"left my white headphones, a scratch",z_hostel3,2026-09-06T08:15:00+00:00/2026-09-06T12:55:07.561584+00:00,headphones,synthetic
+P040,found,imgs/P040_found.jpg,"found a headphones, a scratch near hostel 3",z_hostel3,2026-09-06T12:23:10.466148+00:00,headphones,synthetic
+P041,lost,imgs/P041_lost.jpg,"black headphones, a scratch",z_library,2026-09-01T13:00:00+00:00/2026-09-01T14:53:07.563801+00:00,headphones,synthetic
+P041,found,imgs/P041_found.jpg,,z_library,2026-09-02T03:36:05.870897+00:00,headphones,synthetic
+P042,lost,,left my grey headset,z_library,2026-09-02T15:00:00+00:00/2026-09-02T16:46:16.893261+00:00,headphones,synthetic
+P042,found,imgs/P042_found.jpg,picked up a grey headphones near lib,z_library,2026-09-03T12:22:21.444468+00:00,headphones,synthetic
+P043,lost,imgs/P043_lost.jpg,"lost my headphones, a scratch",z_canteen,2026-09-07T15:30:00+00:00/2026-09-07T20:52:57.212964+00:00,headphones,synthetic
+P043,found,,"someone left a black Bose headphones, a scratch",z_canteen,2026-09-07T18:32:26.545821+00:00,headphones,synthetic
+P044,lost,imgs/P044_lost.jpg,i lost a headpohnes,z_library,2026-09-11T13:00:00+00:00/2026-09-11T16:09:27.740191+00:00,headphones,synthetic
+P044,found,imgs/P044_found.jpg,found black headphones,z_library,2026-09-11T23:48:07.010043+00:00,headphones,synthetic
+P045,lost,imgs/P045_lost.jpg,,z_admin,2026-09-02T19:45:00+00:00/2026-09-02T23:46:15.317054+00:00,laptop,synthetic
+P045,found,imgs/P045_found.jpg,laptop,z_admin,2026-09-02T21:07:08.784424+00:00,laptop,synthetic
+P046,lost,imgs/P046_lost.jpg,"i lost a brown Asus laptop, a scratch",z_block_b,2026-09-07T08:45:00+00:00/2026-09-07T11:05:43.237510+00:00,laptop,synthetic
+P046,found,imgs/P046_found.jpg,"found a brown Asus laptop, a scratch",z_block_b,2026-09-07T16:12:26.041631+00:00,laptop,synthetic
+P047,lost,imgs/P047_lost.jpg,"white laptop, a dent",z_block_a,2026-09-07T19:30:00+00:00/2026-09-07T21:40:21.656292+00:00,laptop,synthetic
+P047,found,imgs/P047_found.jpg,"found a Asus laptop, a dent",z_block_a,2026-09-08T03:22:53.041725+00:00,laptop,synthetic
+P048,lost,imgs/P048_lost.jpg,,z_block_a,2026-09-08T13:30:00+00:00/2026-09-08T17:49:57.761449+00:00,laptop,synthetic
+P048,found,imgs/P048_found.jpg,,z_block_a,2026-09-08T20:56:56.723093+00:00,laptop,synthetic
+P049,lost,imgs/P049_lost.jpg,lost my brown laptop,z_hostel3,2026-09-08T19:45:00+00:00/2026-09-08T22:04:14.296350+00:00,laptop,synthetic
+P049,found,imgs/P049_found.jpg,found brown laptop,z_canteen,2026-09-10T04:19:42.160826+00:00,laptop,synthetic
+P050,lost,imgs/P050_lost.jpg,"lost my red laptop, a scratch",z_library,2026-09-02T15:45:00+00:00/2026-09-02T19:34:50.164798+00:00,laptop,synthetic
+P050,found,,found a red laptop,z_library,2026-09-02T20:44:30.922732+00:00,laptop,synthetic
+P051,lost,imgs/P051_lost.jpg,"missing: laptops, a scratch",z_canteen,2026-09-05T11:00:00+00:00/2026-09-05T14:28:41.347621+00:00,laptop,synthetic
+P051,found,imgs/P051_found.jpg,found silver laptop,z_library,2026-09-05T23:00:48.093192+00:00,laptop,synthetic
+P052,lost,,left my white Lenovo thing,z_sports,2026-09-14T09:45:00+00:00/2026-09-14T15:16:04.779249+00:00,laptop,synthetic
+P052,found,imgs/P052_found.jpg,,z_hostel3,2026-09-14T10:36:04.462895+00:00,laptop,synthetic
+P053,lost,imgs/P053_lost.jpg,lost my black Apple laptop,z_library,2026-09-04T14:00:00+00:00/2026-09-04T17:52:36.887936+00:00,laptop,synthetic
+P053,found,imgs/P053_found.jpg,,z_library,2026-09-04T14:21:44.664725+00:00,laptop,synthetic
+P054,lost,imgs/P054_lost.jpg,"black laptop, a dent",z_library,2026-09-04T11:45:00+00:00/2026-09-04T14:39:34.723722+00:00,laptop,synthetic
+P054,found,imgs/P054_found.jpg,"picked up a black thinkpad, black cat sticker",z_library,2026-09-04T21:31:41.127879+00:00,laptop,synthetic
+P055,lost,,can't find my white Xiaomi phone,z_block_a,2026-09-03T14:30:00+00:00/2026-09-03T17:23:10.182854+00:00,phone,synthetic
+P055,found,imgs/P055_found.jpg,found white Xiaomi phone,z_gate,2026-09-03T22:17:32.971390+00:00,phone,synthetic
+P056,lost,imgs/P056_lost.jpg,thing,z_library,2026-09-06T08:30:00+00:00/2026-09-06T13:51:00.642290+00:00,phone,synthetic
+P056,found,imgs/P056_found.jpg,Realme phone,z_library,2026-09-07T07:15:59.351117+00:00,phone,synthetic
+P057,lost,imgs/P057_lost.jpg,missing: phone,z_block_b,2026-09-08T17:30:00+00:00/2026-09-08T21:16:44.744062+00:00,phone,synthetic
+P057,found,imgs/P057_found.jpg,someone left a white Realme phone,z_block_b,2026-09-08T17:39:52.377943+00:00,phone,synthetic
+P058,lost,imgs/P058_lost.jpg,"left my white phone, a scratch and red star sticker",z_admin,2026-09-08T19:15:00+00:00/2026-09-09T00:42:38.221136+00:00,phone,synthetic
+P058,found,,"found a white phone, red star sticker",z_admin,2026-09-09T00:58:07.356640+00:00,phone,synthetic
+P059,lost,,"lost my silver Realme phone, mountain sticker",z_canteen,2026-09-14T11:45:00+00:00/2026-09-14T14:40:13.103353+00:00,phone,synthetic
+P059,found,imgs/P059_found.jpg,"found silver thing, mountain sticker near central library",z_library,2026-09-14T19:39:08.512532+00:00,phone,synthetic
+P060,lost,,"can't find my white phone, a cracked",z_gate,2026-09-06T16:00:00+00:00/2026-09-06T17:48:25.619981+00:00,phone,synthetic
+P060,found,imgs/P060_found.jpg,picked up a white handset near registrar,z_admin,2026-09-06T18:04:24.567379+00:00,phone,synthetic
+P061,lost,imgs/P061_lost.jpg,"left my OnePlus phone, a cracked and a scratch",z_block_a,2026-09-08T13:15:00+00:00/2026-09-08T15:38:02.764036+00:00,phone,synthetic
+P061,found,,"found white OnePlus phnoe, a scratch",z_block_a,2026-09-09T09:14:55.680117+00:00,phone,synthetic
+P062,lost,,silver Samsung thing,z_canteen,2026-09-06T16:30:00+00:00/2026-09-06T17:44:31.793405+00:00,phone,synthetic
+P062,found,imgs/P062_found.jpg,"found silver Samsung hnadset, a scratch",z_block_b,2026-09-07T16:27:38.825720+00:00,phone,synthetic
+P063,lost,imgs/P063_lost.jpg,"i lost a Samsung phone, a cracked",z_block_a,2026-09-07T15:00:00+00:00/2026-09-07T16:49:16.180936+00:00,phone,synthetic
+P063,found,imgs/P063_found.jpg,,z_block_a,2026-09-08T01:44:06.401192+00:00,phone,synthetic
+P064,lost,imgs/P064_lost.jpg,"silver phone, red star sticker",z_library,2026-09-13T12:00:00+00:00/2026-09-13T16:36:34.960623+00:00,phone,synthetic
+P064,found,imgs/P064_found.jpg,"someone left a phone, red star sticker",z_library,2026-09-14T15:10:10.335227+00:00,phone,synthetic
+P065,lost,imgs/P065_lost.jpg,"purple spectacles, a scratch",z_library,2026-09-04T08:00:00+00:00/2026-09-04T11:33:22.959780+00:00,spectacles,synthetic
+P065,found,imgs/P065_found.jpg,someone left a purple spectacles near central library,z_library,2026-09-04T09:35:13.388159+00:00,spectacles,synthetic
+P066,lost,imgs/P066_lost.jpg,left my white Ray-Ban sunglasses,z_hostel3,2026-09-06T18:45:00+00:00/2026-09-06T21:43:45.513095+00:00,spectacles,synthetic
+P066,found,,"thing, a scratch near sports",z_sports,2026-09-08T00:48:44.255656+00:00,spectacles,synthetic
+P067,lost,,"i lost a Ray-Ban spectacles, a scratch",z_library,2026-09-13T08:15:00+00:00/2026-09-13T13:56:51.848710+00:00,spectacles,synthetic
+P067,found,imgs/P067_found.jpg,,z_block_b,2026-09-13T09:14:20.578691+00:00,spectacles,synthetic
+P068,lost,imgs/P068_lost.jpg,,z_hostel3,2026-09-07T09:00:00+00:00/2026-09-07T13:50:25.403207+00:00,spectacles,synthetic
+P068,found,imgs/P068_found.jpg,found grey spectacles,z_hostel3,2026-09-07T11:34:24.971765+00:00,spectacles,synthetic
+P069,lost,,missing: Ray-Ban spectacles,z_block_b,2026-09-09T09:45:00+00:00/2026-09-09T12:18:05.570365+00:00,spectacles,synthetic
+P069,found,imgs/P069_found.jpg,black spectacles,z_block_a,2026-09-10T00:06:44.286936+00:00,spectacles,synthetic
+P070,lost,imgs/P070_lost.jpg,can't find my black Ray-Ban spectacles,z_sports,2026-09-10T09:15:00+00:00/2026-09-10T13:59:01.605489+00:00,spectacles,synthetic
+P070,found,imgs/P070_found.jpg,,z_canteen,2026-09-11T03:54:04.211626+00:00,spectacles,synthetic
+P071,lost,,"i lost a brown tablet, a cracked and a scratch",z_block_b,2026-09-01T11:45:00+00:00/2026-09-01T17:19:29.153870+00:00,tablet,synthetic
+P071,found,imgs/P071_found.jpg,,z_block_a,2026-09-01T17:54:16.434557+00:00,tablet,synthetic
+P072,lost,,missing: grey tablet,z_canteen,2026-09-07T18:00:00+00:00/2026-09-07T23:19:28.438675+00:00,tablet,synthetic
+P072,found,,found a grey tablet near mess,z_canteen,2026-09-08T08:13:09.278999+00:00,tablet,synthetic
+P073,lost,imgs/P073_lost.jpg,,z_library,2026-09-13T14:45:00+00:00/2026-09-13T18:30:23.087520+00:00,tablet,synthetic
+P073,found,imgs/P073_found.jpg,"picked up a navy Apple tablet, a cracked near lib",z_library,2026-09-14T22:56:15.322372+00:00,tablet,synthetic
+P074,lost,imgs/P074_lost.jpg,lost my silver Samsung kindle,z_library,2026-09-06T13:00:00+00:00/2026-09-06T15:14:55.851638+00:00,tablet,synthetic
+P074,found,imgs/P074_found.jpg,"found tablet, a cracked",z_library,2026-09-06T13:14:58.248881+00:00,tablet,synthetic
+P075,lost,imgs/P075_lost.jpg,,z_block_a,2026-09-10T17:15:00+00:00/2026-09-10T21:18:28.275091+00:00,tablet,synthetic
+P075,found,imgs/P075_found.jpg,picked up a blue Lenovo tablets near cafeteria,z_canteen,2026-09-11T02:04:24.794795+00:00,tablet,synthetic
+P076,lost,imgs/P076_lost.jpg,missing: maoron umbrella,z_canteen,2026-09-04T10:30:00+00:00/2026-09-04T14:15:07.054179+00:00,umbrella,synthetic
+P076,found,,found a maroon umbrella near lib,z_library,2026-09-05T05:07:33.451899+00:00,umbrella,synthetic
+P077,lost,,left my umbrella,z_library,2026-09-02T12:30:00+00:00/2026-09-02T16:56:35.365676+00:00,umbrella,synthetic
+P077,found,,picked up a umbrella near admin block,z_admin,2026-09-02T21:28:07.900074+00:00,umbrella,synthetic
+P078,lost,,watch,z_admin,2026-09-09T08:30:00+00:00/2026-09-09T14:16:42.595183+00:00,watch,synthetic
+P078,found,imgs/P078_found.jpg,found brown watch near class room,z_block_a,2026-09-12T04:59:11.007242+00:00,watch,synthetic
+P079,lost,,missing: Titan watch,z_library,2026-09-08T12:15:00+00:00/2026-09-08T16:55:19.591357+00:00,watch,synthetic
+P079,found,imgs/P079_found.jpg,,z_hostel3,2026-09-08T17:54:08.374455+00:00,watch,synthetic
+P080,lost,,can't find my silver watches,z_gate,2026-09-13T17:15:00+00:00/2026-09-13T18:16:13.269353+00:00,watch,synthetic
+P080,found,imgs/P080_found.jpg,someone left a silver watch near computer lab,z_block_b,2026-09-13T17:27:40.851773+00:00,watch,synthetic
+P081,lost,,"missing: Apple watch, a engraved",z_library,2026-09-10T18:00:00+00:00/2026-09-10T21:35:04.343532+00:00,watch,synthetic
+P081,found,imgs/P081_found.jpg,Apple watch near lib,z_library,2026-09-10T21:07:09.942669+00:00,watch,synthetic
+P082,lost,imgs/P082_lost.jpg,i lost a silver Apple watch,z_block_a,2026-09-04T15:15:00+00:00/2026-09-04T18:12:25.671834+00:00,watch,synthetic
+P082,found,imgs/P082_found.jpg,silver Apple watch,z_library,2026-09-04T16:49:58.682671+00:00,watch,synthetic
+P083,lost,imgs/P083_lost.jpg,missing: grey Apple watch,z_block_b,2026-09-06T13:15:00+00:00/2026-09-06T17:45:36.998531+00:00,watch,synthetic
+P083,found,imgs/P083_found.jpg,"found Apple watch, a scratch near lecture halls",z_block_a,2026-09-06T14:08:28.384986+00:00,watch,synthetic
+P084,lost,,can't find my borwn Titan smartwatch,z_block_a,2026-09-02T16:30:00+00:00/2026-09-02T19:06:03.494613+00:00,watch,synthetic
+P084,found,imgs/P084_found.jpg,,z_block_b,2026-09-03T00:26:48.971516+00:00,watch,synthetic
+P085,lost,,"left my balck watch, a scratch",z_canteen,2026-09-03T10:45:00+00:00/2026-09-03T16:19:49.268819+00:00,watch,synthetic
+P085,found,imgs/P085_found.jpg,black Apple watch near cafe,z_canteen,2026-09-05T01:29:17.970014+00:00,watch,synthetic
+P086,lost,imgs/P086_lost.jpg,"i lost a Titan smartwatch, a scratch and a engraved",z_hostel3,2026-09-13T17:15:00+00:00/2026-09-13T18:35:22.450166+00:00,watch,synthetic
+P086,found,imgs/P086_found.jpg,,z_sports,2026-09-13T22:21:30.225997+00:00,watch,synthetic
+P087,lost,,"missing: grey Titan wristwatch, a scratch",z_canteen,2026-09-06T08:30:00+00:00/2026-09-06T11:36:14.959594+00:00,watch,synthetic
+P087,found,imgs/P087_found.jpg,,z_library,2026-09-08T10:03:35.722436+00:00,watch,synthetic
+P088,lost,,can't find my brown i dcard,z_library,2026-09-11T15:00:00+00:00/2026-09-11T19:09:27.791191+00:00,id_card,synthetic
+P088,found,,picked up a id card near the library,z_library,2026-09-12T03:43:39.108442+00:00,id_card,synthetic
+P089,lost,,"brown thing, mountain sticker",z_library,2026-09-06T12:00:00+00:00/2026-09-06T16:17:15.904826+00:00,keys,synthetic
+P089,found,,"picked up a keys, mountain sticker near central library",z_library,2026-09-06T20:57:41.966958+00:00,keys,synthetic
+P090,lost,,left my black earbuds,z_block_b,2026-09-01T16:45:00+00:00/2026-09-01T21:01:22.479306+00:00,earbuds,synthetic
+P090,found,,someone left a earubds near lecture halls,z_block_a,2026-09-01T19:28:19.726491+00:00,earbuds,synthetic
+P091,lost,,"left my grey cardholder, a scratch",z_canteen,2026-09-05T16:15:00+00:00/2026-09-05T21:56:15.598863+00:00,wallet,synthetic
+P091,found,,"found grey wallet, a scratch near central library",z_library,2026-09-05T23:14:43.644492+00:00,wallet,synthetic
+P092,lost,,left my navy Apple charger,z_library,2026-09-02T09:30:00+00:00/2026-09-02T10:54:51.558681+00:00,charger,synthetic
+P092,found,,picked up a navy adapter,z_library,2026-09-02T13:43:21.561464+00:00,charger,synthetic
+P093,lost,,"Anker power bank, a scratch",z_hostel3,2026-09-01T13:45:00+00:00/2026-09-01T17:51:34.188701+00:00,power_bank,synthetic
+P093,found,,found a Anker power bank near hostel 3,z_hostel3,2026-09-01T21:54:26.224150+00:00,power_bank,synthetic
+P094,lost,,can't find my brown notebook,z_gate,2026-09-10T12:15:00+00:00/2026-09-10T13:38:36.864900+00:00,notebook,synthetic
+P094,found,,"found brwon notebook, football sticker near lecture hall",z_block_a,2026-09-10T12:54:53.925064+00:00,notebook,synthetic
+P095,lost,,id card,z_admin,2026-09-11T12:45:00+00:00/2026-09-11T14:31:12.142732+00:00,id_card,synthetic
+P095,found,,id card,z_gate,2026-09-11T21:17:52.361556+00:00,id_card,synthetic
+P096,lost,,"i lost a keys, crescent moon sticker",z_block_a,2026-09-11T11:30:00+00:00/2026-09-11T13:39:18.696329+00:00,keys,synthetic
+P096,found,,found silver keys near cafeteria,z_canteen,2026-09-11T12:13:49.092811+00:00,keys,synthetic
+P097,lost,,green earphone,z_library,2026-09-11T09:45:00+00:00/2026-09-11T14:49:25.875488+00:00,earbuds,synthetic
+P097,found,,"found a green tihng, a scratch near lecture halls",z_block_a,2026-09-12T10:00:50.067266+00:00,earbuds,synthetic
+P098,lost,,can't find my billfold,z_library,2026-09-01T10:15:00+00:00/2026-09-01T13:35:55.175442+00:00,wallet,synthetic
+P098,found,,"found pink wallet, a scratch",z_library,2026-09-01T10:42:58.718963+00:00,wallet,synthetic
+P099,lost,,i lost a cable,z_block_a,2026-09-11T16:00:00+00:00/2026-09-11T20:39:07.564022+00:00,charger,synthetic
+P099,found,,someone left a red charger,z_block_a,2026-09-11T21:50:24.474949+00:00,charger,synthetic
+P100,lost,,"navy Anker powerbank, a dent",z_gate,2026-09-02T15:45:00+00:00/2026-09-02T20:04:59.575244+00:00,power_bank,synthetic
+P100,found,,someone left a navy Anker power bank,z_gate,2026-09-02T23:42:31.098268+00:00,power_bank,synthetic
+P101,lost,,blue notebook,z_canteen,2026-09-05T10:30:00+00:00/2026-09-05T11:44:00.147088+00:00,notebook,synthetic
+P101,found,,"picked up a blue Classmate thing, crescent moon sticker near classroom",z_block_a,2026-09-06T03:07:27.869683+00:00,notebook,synthetic
+P102,lost,,lost my id card,z_block_b,2026-09-05T19:00:00+00:00/2026-09-05T21:17:24.999818+00:00,id_card,synthetic
+P102,found,,id card,z_library,2026-09-05T20:23:22.963351+00:00,id_card,synthetic
+P103,lost,,"i lost a blue keyring, anime sticker",z_library,2026-09-06T10:45:00+00:00/2026-09-06T16:05:49.776162+00:00,keys,synthetic
+P103,found,,found keys near computer lab,z_block_b,2026-09-06T14:23:23.580260+00:00,keys,synthetic
+P104,lost,,"white Samsung earphones, a scratch",z_library,2026-09-03T14:30:00+00:00/2026-09-03T18:06:28.981851+00:00,earbuds,synthetic
+P104,found,,picked up a white Samsung earbuds,z_library,2026-09-03T22:44:37.024383+00:00,earbuds,synthetic
+P105,lost,,"i lost a pink cardholder, a scratch",z_library,2026-09-09T13:45:00+00:00/2026-09-09T17:22:10.654064+00:00,wallet,synthetic
+P105,found,,someone left a pink wallet,z_block_b,2026-09-10T09:13:04.268033+00:00,wallet,synthetic
+P106,lost,,i lost a grey charger,z_sports,2026-09-13T08:30:00+00:00/2026-09-13T14:06:42.664122+00:00,charger,synthetic
+P106,found,,"grey calbe, a scratch near food court",z_canteen,2026-09-14T10:14:28.204426+00:00,charger,synthetic
+P107,lost,,"missing: navy power bank, a scratch",z_hostel3,2026-09-02T09:00:00+00:00/2026-09-02T11:31:55.912636+00:00,power_bank,synthetic
+P107,found,,"found power bank, a scratch",z_hostel3,2026-09-02T21:56:44.200524+00:00,power_bank,synthetic
+P108,lost,,"i lost a pink notebook, crescent moon sticker",z_block_a,2026-09-13T15:30:00+00:00/2026-09-13T17:43:48.745396+00:00,notebook,synthetic
+P108,found,,found a pink notepad near class room,z_block_a,2026-09-13T19:22:03.496319+00:00,notebook,synthetic
+P109,lost,,blue thnig,z_sports,2026-09-14T08:15:00+00:00/2026-09-14T12:32:30.379852+00:00,id_card,synthetic
+P109,found,,found blue icard,z_sports,2026-09-14T15:01:10.060805+00:00,id_card,synthetic
+P110,lost,,missing: keys,z_hostel3,2026-09-02T14:00:00+00:00/2026-09-02T16:24:23.611518+00:00,keys,synthetic
+P110,found,,found keys,z_hostel3,2026-09-02T17:39:59.357731+00:00,keys,synthetic
+P111,lost,,can't find my OnePlus eabrud,z_sports,2026-09-14T18:00:00+00:00/2026-09-14T20:39:36.247812+00:00,earbuds,synthetic
+P111,found,,picked up a white earbud,z_hostel3,2026-09-15T15:18:52.752050+00:00,earbuds,synthetic

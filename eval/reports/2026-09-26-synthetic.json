@@ -1,0 +1,258 @@
+{
+  "run_id": "2026-09-26-synthetic",
+  "pairs": "synthetic",
+  "n_pairs": 112,
+  "created_at": "2026-09-26T12:18:15.154711+00:00",
+  "metrics": {
+    "p_at_1": 0.8482,
+    "p_at_5": 0.9643,
+    "p_at_10": 1.0,
+    "recall_at_5": 0.8929,
+    "mrr": 0.9001,
+    "map": 0.9001,
+    "ece": 0.1078
+  },
+  "targets": {
+    "p_at_1": 0.6,
+    "p_at_5": 0.85
+  },
+  "reliability": [
+    {
+      "bin": 0,
+      "confidence": 0.024635470851709817,
+      "accuracy": 0.0,
+      "n": 307
+    },
+    {
+      "bin": 1,
+      "confidence": 0.14745001858888468,
+      "accuracy": 0.0,
+      "n": 50
+    },
+    {
+      "bin": 2,
+      "confidence": 0.23224129572962343,
+      "accuracy": 0.0,
+      "n": 20
+    },
+    {
+      "bin": 3,
+      "confidence": 0.3449897180405008,
+      "accuracy": 0.0,
+      "n": 18
+    },
+    {
+      "bin": 4,
+      "confidence": 0.45982360558458524,
+      "accuracy": 0.0,
+      "n": 10
+    },
+    {
+      "bin": 5,
+      "confidence": 0.5554818258238581,
+      "accuracy": 0.058823529411764705,
+      "n": 17
+    },
+    {
+      "bin": 6,
+      "confidence": 0.6471466193266079,
+      "accuracy": 0.0,
+      "n": 7
+    },
+    {
+      "bin": 7,
+      "confidence": 0.736715958031236,
+      "accuracy": 0.375,
+      "n": 8
+    },
+    {
+      "bin": 8,
+      "confidence": 0.8454230589803625,
+      "accuracy": 0.3333333333333333,
+      "n": 9
+    },
+    {
+      "bin": 9,
+      "confidence": 0.956006702212072,
+      "accuracy": 0.9642857142857143,
+      "n": 28
+    }
+  ],
+  "per_category": [
+    {
+      "category": "backpack",
+      "p_at_1": 0.8,
+      "p_at_5": 0.9,
+      "n": 10
+    },
+    {
+      "category": "book",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 7
+    },
+    {
+      "category": "bottle",
+      "p_at_1": 0.9,
+      "p_at_5": 1.0,
+      "n": 10
+    },
+    {
+      "category": "calculator",
+      "p_at_1": 0.625,
+      "p_at_5": 1.0,
+      "n": 8
+    },
+    {
+      "category": "charger",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 3
+    },
+    {
+      "category": "earbuds",
+      "p_at_1": 0.5,
+      "p_at_5": 0.75,
+      "n": 4
+    },
+    {
+      "category": "headphones",
+      "p_at_1": 0.9,
+      "p_at_5": 1.0,
+      "n": 10
+    },
+    {
+      "category": "id_card",
+      "p_at_1": 0.75,
+      "p_at_5": 1.0,
+      "n": 4
+    },
+    {
+      "category": "keys",
+      "p_at_1": 0.75,
+      "p_at_5": 1.0,
+      "n": 4
+    },
+    {
+      "category": "laptop",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 10
+    },
+    {
+      "category": "notebook",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 3
+    },
+    {
+      "category": "phone",
+      "p_at_1": 0.9,
+      "p_at_5": 1.0,
+      "n": 10
+    },
+    {
+      "category": "power_bank",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 3
+    },
+    {
+      "category": "spectacles",
+      "p_at_1": 0.6667,
+      "p_at_5": 0.8333,
+      "n": 6
+    },
+    {
+      "category": "tablet",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 5
+    },
+    {
+      "category": "umbrella",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 2
+    },
+    {
+      "category": "wallet",
+      "p_at_1": 1.0,
+      "p_at_5": 1.0,
+      "n": 3
+    },
+    {
+      "category": "watch",
+      "p_at_1": 0.7,
+      "p_at_5": 0.9,
+      "n": 10
+    }
+  ],
+  "ablation": [
+    {
+      "name": "image only",
+      "p_at_1": 0.3393,
+      "p_at_5": 0.6964
+    },
+    {
+      "name": "text only",
+      "p_at_1": 0.4286,
+      "p_at_5": 0.8036
+    },
+    {
+      "name": "+ attributes",
+      "p_at_1": 0.6786,
+      "p_at_5": 0.9464
+    },
+    {
+      "name": "+ text-to-photo",
+      "p_at_1": 0.6696,
+      "p_at_5": 0.9464
+    },
+    {
+      "name": "+ location and time",
+      "p_at_1": 0.8482,
+      "p_at_5": 0.9643
+    }
+  ],
+  "extra": {
+    "recall_at_10": 0.9911,
+    "candidate_recall": 1.0,
+    "ece_uncalibrated": 0.3265,
+    "calibration": {
+      "fitted": true,
+      "model_version": "logit-20260926-174815",
+      "n_train_pairs": 78,
+      "n_heldout_pairs": 34,
+      "heldout_metrics": {
+        "p_at_1": 0.9118,
+        "p_at_5": 1.0,
+        "p_at_10": 1.0,
+        "mrr": 0.9559,
+        "map": 0.9559,
+        "n": 34
+      },
+      "heldout_metrics_hand_scorer": {
+        "p_at_1": 0.9706,
+        "p_at_5": 1.0,
+        "p_at_10": 1.0,
+        "mrr": 0.9765,
+        "map": 0.9765,
+        "n": 34
+      }
+    },
+    "seed": 0,
+    "pool_size": "all",
+    "ml_mode": "full",
+    "scorer": "hand-v1",
+    "stages": {
+      "detector": "yolo11n (COCO) + CLIP zero-shot for other classes",
+      "clip": "open_clip ViT-B/32 (openai) on mps",
+      "attribute_heads": "CLIP zero-shot prompts",
+      "ocr": "rapidocr-onnxruntime",
+      "text_embedder": "MiniLM-L6 on mps"
+    },
+    "seconds": 88.3,
+    "notes": "Synthetic pairs are OPTIMISTIC: both views come from one public photo and the text is generated from the same labels. Do not present these numbers as real-world performance."
+  }
+}

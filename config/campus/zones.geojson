@@ -1,0 +1,326 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_gate",
+        "name": "Main gate and security desk",
+        "short_name": "Main gate",
+        "kind": "gate",
+        "centroid": [
+          78.38679,
+          17.5416
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.386507,
+              17.541331
+            ],
+            [
+              78.387073,
+              17.541331
+            ],
+            [
+              78.387073,
+              17.541869
+            ],
+            [
+              78.386507,
+              17.541869
+            ],
+            [
+              78.386507,
+              17.541331
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_library",
+        "name": "Central library",
+        "short_name": "Library",
+        "kind": "library",
+        "centroid": [
+          78.3863,
+          17.5372
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.386017,
+              17.536931
+            ],
+            [
+              78.386583,
+              17.536931
+            ],
+            [
+              78.386583,
+              17.537469
+            ],
+            [
+              78.386017,
+              17.537469
+            ],
+            [
+              78.386017,
+              17.536931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_block_a",
+        "name": "D-Block",
+        "short_name": "D-Block",
+        "kind": "academic",
+        "centroid": [
+          78.38506,
+          17.53668
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.384777,
+              17.536411
+            ],
+            [
+              78.385343,
+              17.536411
+            ],
+            [
+              78.385343,
+              17.536949
+            ],
+            [
+              78.384777,
+              17.536949
+            ],
+            [
+              78.384777,
+              17.536411
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_block_b",
+        "name": "Workshops",
+        "short_name": "Workshops",
+        "kind": "academic",
+        "centroid": [
+          78.38526,
+          17.53728
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.384977,
+              17.537011
+            ],
+            [
+              78.385543,
+              17.537011
+            ],
+            [
+              78.385543,
+              17.537549
+            ],
+            [
+              78.384977,
+              17.537549
+            ],
+            [
+              78.384977,
+              17.537011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_canteen",
+        "name": "SAC and food outlets",
+        "short_name": "SAC",
+        "kind": "canteen",
+        "centroid": [
+          78.38478,
+          17.53843
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.384497,
+              17.538161
+            ],
+            [
+              78.385063,
+              17.538161
+            ],
+            [
+              78.385063,
+              17.538699
+            ],
+            [
+              78.384497,
+              17.538699
+            ],
+            [
+              78.384497,
+              17.538161
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_sports",
+        "name": "Sports complex",
+        "short_name": "Sports",
+        "kind": "sports",
+        "centroid": [
+          78.38545,
+          17.54066
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.385167,
+              17.540391
+            ],
+            [
+              78.385733,
+              17.540391
+            ],
+            [
+              78.385733,
+              17.540929
+            ],
+            [
+              78.385167,
+              17.540929
+            ],
+            [
+              78.385167,
+              17.540391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_bus",
+        "name": "Student bus stop",
+        "short_name": "Bus stop",
+        "kind": "transport",
+        "centroid": [
+          78.38621,
+          17.53985
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.385927,
+              17.539581
+            ],
+            [
+              78.386493,
+              17.539581
+            ],
+            [
+              78.386493,
+              17.540119
+            ],
+            [
+              78.385927,
+              17.540119
+            ],
+            [
+              78.385927,
+              17.539581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "z_admin",
+        "name": "Training and placement cell",
+        "short_name": "Placement cell",
+        "kind": "admin",
+        "centroid": [
+          78.38423,
+          17.53677
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.383947,
+              17.536501
+            ],
+            [
+              78.384513,
+              17.536501
+            ],
+            [
+              78.384513,
+              17.537039
+            ],
+            [
+              78.383947,
+              17.537039
+            ],
+            [
+              78.383947,
+              17.536501
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "_note": "VNR VJIET, Bachupally. OpenStreetMap (c) contributors."
+}

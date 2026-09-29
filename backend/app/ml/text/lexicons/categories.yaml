@@ -1,0 +1,35 @@
+# The 18 campus categories. `group` drives candidate generation and partial credit
+# (same group, different category = sibling credit). `synonyms` feed the text parser.
+categories:
+  id_card:    {group: cards,     synonyms: [id card, id-card, identity card, college id, student id, id badge, i-card, icard, id]}
+  laptop:     {group: computers, synonyms: [laptop, laptops, laptop computer, notebook computer, notebook pc, macbook, macbook air, macbook pro, chromebook, ultrabook, thinkpad]}
+  phone:      {group: phones,    synonyms: [phone, phones, mobile, mobile phone, cell phone, cellphone, smartphone, iphone, android phone, handset]}
+  tablet:     {group: computers, synonyms: [tablet, tablets, ipad, galaxy tab, kindle, e-reader]}
+  earbuds:    {group: audio,     synonyms: [earbuds, earbud, ear buds, earphones, earphone, airpods, earpods, wireless earbuds, tws, earbud case]}
+  headphones: {group: audio,     synonyms: [headphones, headphone, headset, over-ear headphones, wireless headphones]}
+  charger:    {group: power,     synonyms: [charger, chargers, adapter, adaptor, power adapter, charging cable, usb cable, laptop charger, phone charger, cable]}
+  power_bank: {group: power,     synonyms: [power bank, powerbank, portable charger, battery pack]}
+  wallet:     {group: cards,     synonyms: [wallet, card holder, cardholder, billfold, card case]}
+  keys:       {group: keys,      synonyms: [keys, key, keychain, key chain, keyring, key ring, bike key, car key, key bunch]}
+  backpack:   {group: bags,      synonyms: [backpack, backpacks, rucksack, school bag, laptop bag, bagpack, knapsack, sling bag, duffel bag, satchel]}
+  bottle:     {group: drinkware, synonyms: [bottle, bottles, water bottle, flask, thermos, sipper, tumbler]}
+  book:       {group: paper,     synonyms: [book, books, textbook, text book, novel]}
+  notebook:   {group: paper,     synonyms: [notebook, notebooks, note book, notepad, diary, journal, register]}
+  spectacles: {group: eyewear,   synonyms: [spectacles, specs, glasses, eyeglasses, sunglasses, shades, spectacle case, glasses case]}
+  watch:      {group: wearables, synonyms: [watch, watches, wristwatch, smartwatch, smart watch, fitbit, apple watch]}
+  umbrella:   {group: umbrellas,     synonyms: [umbrella, umbrellas, brolly]}
+  calculator: {group: calculators,     synonyms: [calculator, scientific calculator, graphing calculator]}
+
+# Broad terms that name a family, not one category. Parsed at reduced confidence.
+generic:
+  bag:      {category: backpack,   confidence: 0.6}
+  bags:     {category: backpack,   confidence: 0.6}
+  tote:     {category: backpack,   confidence: 0.6}
+  tote bag: {category: backpack,   confidence: 0.6}
+  handbag:  {category: backpack,   confidence: 0.55}
+  purse:    {category: wallet,     confidence: 0.6}
+  pouch:    {category: wallet,     confidence: 0.4}
+  adapter:  {category: charger,    confidence: 0.6}
+  earpiece: {category: earbuds,    confidence: 0.6}
+
+materials: [plastic, metal, leather, fabric, glass, paper, wood, rubber]
