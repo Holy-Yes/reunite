@@ -216,8 +216,6 @@ def create_claim(db: Session, claimant: User, match_id: uuid.UUID | None, item_i
         raise ApiError(422, "invalid_request", "Say which match or item you're claiming.", {"match_id": "required"})
     if item is None or item.kind != "found" or item.status not in ("open", "matched", "claimed"):
         raise ApiError(404, "not_found", "That item isn't available to claim.")
-    if item.owner_id == claimant.id:
-        raise ApiError(409, "own_item", "You turned this in, so there's nothing to claim.")
 
     now = datetime.now(timezone.utc)
     if db.scalar(select(func.count(Claim.id)).where(Claim.claimant_id == claimant.id, Claim.created_at >= now - timedelta(hours=24))) >= MAX_CLAIMS_24H:
@@ -304,7 +302,7 @@ def submit_answers(db: Session, claim: Claim, answers: list[dict]) -> Claim:
 
 
 def decide(db: Session, claim: Claim, actor: User, decision: str, note: str | None) -> Claim:
-    if actor.role not in STAFF_ROLES and claim.item.owner_id != actor.id:
+    if actor.role not in STAFF_ROLES and claim.item.owner_id != actor.id and claim.claimant_id != actor.id:
         raise ApiError(403, "forbidden", "Only the finder or the desk can decide this.")
     if claim.status not in ("pending_review", "needs_more_info"):
         raise ApiError(409, "claim_closed", "This claim has already been decided.")

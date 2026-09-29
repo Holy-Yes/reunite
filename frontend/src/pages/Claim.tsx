@@ -161,10 +161,10 @@ export default function ClaimPage() {
           <Questions claim={claim} onDone={setData} />
         </>
       )}
-      {mine && st === "pending_review" && <p className="banner">{t("claim.pending")}</p>}
+      {mine && st === "pending_review" && !claim.review && <p className="banner">{t("claim.pending")}</p>}
       {mine && st === "rejected" && <p className="banner banner--bad">{t("claim.rejected")} {claim.note}</p>}
       {approved && st !== "handed_over" && mine && <p className="banner banner--ok">{t("claim.approved")}</p>}
-      {!mine && <FinderReview claim={claim} onDone={setData} />}
+      {(claim.review || !mine) && <FinderReview claim={claim} onDone={setData} />}
 
       {approved && (
         <div className="stack">

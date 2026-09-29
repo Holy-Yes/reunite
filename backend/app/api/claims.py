@@ -67,7 +67,8 @@ def _claim(db: Session, claim_id: str, user: User) -> Claim:
 
 
 def _view(c: Claim, user: User, db: Session | None = None) -> dict:
-    out = claim_out(c, staff=c.claimant_id != user.id)
+    is_reviewer = (c.item.owner_id == user.id) or (user.role in ("desk", "admin")) or (c.claimant_id == user.id)
+    out = claim_out(c, staff=is_reviewer)
     if db is not None:
         out["chat_open"] = c.status in chat.OPEN_STATUSES
         other = db.get(User, c.item.owner_id if c.claimant_id == user.id else c.claimant_id)
