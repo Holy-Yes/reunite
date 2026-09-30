@@ -1,0 +1,57 @@
+# Render Blueprint: New > Blueprint > pick this repo.
+# The API needs ~2GB RAM (torch + CLIP + YOLO), hence the standard plan. For a cheap demo, drop the
+# plan to starter and set ML_MODE=light.
+databases:
+  - name: reunite-db
+    databaseName: reunite
+    plan: basic-256mb
+
+services:
+  - type: web
+    name: reunite-api
+    runtime: python
+    plan: standard
+    buildCommand: sh scripts/render_build.sh
+    startCommand: sh scripts/render_start.sh
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DATABASE_URL
+        fromDatabase:
+          name: reunite-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ML_MODE
+        value: full
+      - key: CORS_ORIGINS
+        value: https://reunite-web.onrender.com
+      - key: MEDIA_DIR
+        value: data/media
+      - key: EMAIL_BACKEND
+        value: console
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: CAMPUS_NAME
+        sync: false
+
+  - type: web
+    name: reunite-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://reunite-api.onrender.com/api/*
+      - type: rewrite
+        source: /media/*
+        destination: https://reunite-api.onrender.com/media/*
+      - type: rewrite
+        source: /health
+        destination: https://reunite-api.onrender.com/health
+      - type: rewrite
+        source: /*
+        destination: /index.html
